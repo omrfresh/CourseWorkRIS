@@ -1,0 +1,68 @@
+﻿<Window x:Class="ClientApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bilateral Filter Client" Height="600" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <Button Name="btnSelectImage" Content="Выбрать изображения" Width="200" Height="30" Click="btnSelectImage_Click"/>
+            <TextBlock Name="txtSelectedImage" Text="Изображения не выбраны" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,10,0,10">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Diameter:" VerticalAlignment="Center" Margin="5"/>
+                <TextBox Name="txtDiameter" Width="50" Text="9"/>
+                <TextBlock Text="Sigma Color:" VerticalAlignment="Center" Margin="15,5,5,5"/>
+                <TextBox Name="txtSigmaColor" Width="50" Text="75"/>
+                <TextBlock Text="Sigma Space:" VerticalAlignment="Center" Margin="15,5,5,5"/>
+                <TextBox Name="txtSigmaSpace" Width="50" Text="75"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Режим:" VerticalAlignment="Center" Margin="5"/>
+                <RadioButton Name="rbSingleThread" Content="Однопоточный" IsChecked="True" VerticalAlignment="Center" Checked="rbMode_CheckedChanged" />
+                <RadioButton Name="rbMultiThread" Content="Многопоточный" Margin="10,0,0,0" VerticalAlignment="Center" Checked="rbMode_CheckedChanged"/>
+
+                <TextBlock Text="Количество потоков:" VerticalAlignment="Center" Margin="15,0,5,0"/>
+                <TextBox Name="txtThreadCount" Width="50" Text="8" IsEnabled="False"/>
+                <Button Name="btnOpenLog" Content="Открыть лог" Margin="20,0,0,0" Click="btnOpenLog_Click" />
+            </StackPanel>
+
+            <Button Name="btnStartProcessing" Content="Начать обработку" Width="150" Margin="0,10,0,0" HorizontalAlignment="Left" Click="btnStartProcessing_Click" IsEnabled="False"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="5">
+                <Image Name="imgOriginal" Stretch="Uniform"/>
+            </Border>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Name="pnlNavigation" Visibility="Collapsed">
+                <Button Name="btnPrevious" Content="&lt;" Margin="5" Padding="10,5" Click="btnPrevious_Click"/>
+                <TextBlock Name="txtImageCounter" HorizontalAlignment="Center" Margin="5"/>
+                <Button Name="btnNext" Content="&gt;" Margin="5" Padding="10,5" Click="btnNext_Click"/>
+            </StackPanel>
+
+            <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="1" Margin="5">
+                <Image Name="imgProcessed" Stretch="Uniform"/>
+            </Border>
+        </Grid>
+
+        <StackPanel Grid.Row="3" Margin="5">
+            <ProgressBar Name="progressBar" Height="20"/>
+            <TextBlock Name="txtTotalTime" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

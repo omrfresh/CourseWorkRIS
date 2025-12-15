@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClientData" Collapsed="true">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAIAAABAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientApp.MainWindow" Collapsed="true">
+    <Position X="1.25" Y="1.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAQAAAAAAAAAAQAACIAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClientApp.UdpClientHandler" Collapsed="true">
+    <Position X="4" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IQAAAAAAAAAEAEAAABAAAAAAAAAABAAAAAAAAACAAAA=</HashCode>
+      <FileName>UdpClientHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
